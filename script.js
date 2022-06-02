@@ -5,7 +5,6 @@ function computerPlay(){
     console.log(randomChoice)
     return randomChoice;
 }
-//computerPlay()
 function playRound(playerSelection,computerSelection){
     playerSelection = playerSelection[0].toUpperCase()+playerSelection.slice(1).toLowerCase()
     if((playerSelection=='Rock' && computerSelection=='Scissors')||(playerSelection=='Scissors' && computerSelection=='Paper')||(playerSelection=='Paper' && computerSelection=='Rock')){
