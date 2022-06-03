@@ -3,7 +3,7 @@ const result = document.getElementById('result');
 const pcScore = document.getElementById('pcScore');
 const playerScore = document.getElementById('playerScore');
 const restart = document.getElementById('restart');
-restart.style.visibility = 'hidden';
+//restart.style.visibility = 'hidden';
 let pcScoreVal =0;
 let playerScoreVal =0;
 
@@ -17,7 +17,13 @@ butt.forEach(element => {
 });
 
 restart.addEventListener('click',function(){
-
+    pcScoreVal =0;
+    playerScoreVal=0;
+    restart.toggleAttribute('hidden');
+    toggleDisable();
+    playerScore.innerText = `Player Score: ${playerScoreVal}`;
+    pcScore.innerText = `Pc Score: ${pcScoreVal}`;
+    result.innerText = `Let's start a new round!`;
 })
 
 function computerPlay(){
@@ -55,6 +61,15 @@ function updateWinner(winner){
     updateScore(winner);
     
 }
+
+function toggleDisable(){
+    butt.forEach(element => {
+        if(!element.id){
+            element.toggleAttribute('disabled');
+        }
+    });
+}
+
 function updateScore(winner){
     if(winner == 'Player'){
         playerScoreVal += 1;
@@ -65,8 +80,13 @@ function updateScore(winner){
     }
     if(pcScoreVal == 5){
         result.innerText = `${winner} won the game! Thank you for playing.`;
+        restart.toggleAttribute('hidden');
+        toggleDisable();
+
     } else if(playerScoreVal ==5){
         result.innerText = `${winner} won the game! Thank you for playing.`;
+        restart.toggleAttribute('hidden');
+        toggleDisable();
     }
 }
 
