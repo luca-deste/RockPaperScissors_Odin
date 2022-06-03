@@ -1,0 +1,16 @@
+body{
+    color: white;
+    background-color: black;
+    font-family: 'Kdam Thmor Pro', sans-serif;
+}
+button{
+    font-family: 'Kdam Thmor Pro', sans-serif;
+    padding: 5px 10px 5px 10px;
+    margin: 15px 5px 5px 5px;
+    border-radius: 7px;
+    border: 2px solid rgb(76, 76, 255);
+    background-color: rgb(255, 255, 255);
+}
+.center{
+    text-align: center;
+}
